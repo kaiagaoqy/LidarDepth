@@ -11,12 +11,13 @@ final class MainController: UIViewController, ARSessionDelegate {
     private var showSceneButton = UIButton(type: .system)
     private var saveButton = UIButton(type: .system)
     private var toggleParticlesButton = UIButton(type: .system)
-    private let session = ARSession()
-    var renderer: Renderer!
-    private  var isPasued = false
+    private let session = ARSession() // Use ARSession to get depth data from Lidar
+    var renderer: Renderer! // real time updates to the application
+    private var isPasued = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Returns the device instance Metal selects as the default to run graphics
         guard let device = MTLCreateSystemDefaultDevice() else {
             print("Metal is not supported on this device")
             return
@@ -28,7 +29,7 @@ final class MainController: UIViewController, ARSessionDelegate {
             view.device = device
             view.backgroundColor = UIColor.clear
             // we need this to enable depth test
-            view.depthStencilPixelFormat = .depth32Float
+            view.depthStencilPixelFormat = .depth32Float // The format used to generate the depthStencilTexture object.
             view.contentScaleFactor = 1
             view.delegate = self
             // Configure the renderer to draw to the view
@@ -36,6 +37,7 @@ final class MainController: UIViewController, ARSessionDelegate {
             renderer.drawRectResized(size: view.bounds.size)
         }
         
+        // MARK: Add subviews to the end of the receiver’s list of subviews.
         clearButton = createButton(mainView: self, iconName: "trash.circle.fill",
             tintColor: .red, hidden: !isUIEnabled)
         view.addSubview(clearButton)
@@ -56,6 +58,7 @@ final class MainController: UIViewController, ARSessionDelegate {
             tintColor: .white, hidden: !isUIEnabled)
         view.addSubview(rgbButton)
         
+        // Create constrains between user interfaces ( like constrains in Storyboard)
         NSLayoutConstraint.activate([
             clearButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 50),
             clearButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
@@ -84,7 +87,7 @@ final class MainController: UIViewController, ARSessionDelegate {
         ])
     }
     
-    
+    // MARK: Start the Session
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -277,6 +280,7 @@ extension SCNNode {
     }
 }
 
+// Customize a Button
 func createButton(mainView: MainController, iconName: String, tintColor: UIColor, hidden: Bool) -> UIButton {
     let button = UIButton(type: .system)
     button.isHidden = hidden

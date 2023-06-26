@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Ensure that the device supports scene depth and present
             //  an error-message view controller, if not.
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            // The root view controller provides the content view of the window
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "unsupportedDeviceMessage")
         }
         return true

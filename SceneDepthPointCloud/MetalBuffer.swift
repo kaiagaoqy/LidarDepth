@@ -113,6 +113,7 @@ extension MTLRenderCommandEncoder {
 }
 
 struct Texture: Resource {
+    // A type alias allows you to provide a new name for an existing data type into your program
     typealias Element = Any
     
     let texture: MTLTexture
