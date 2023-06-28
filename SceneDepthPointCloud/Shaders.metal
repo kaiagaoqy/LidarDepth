@@ -17,7 +17,7 @@ struct ParticleVertexOut {
     float4 color;
 };
 
-constexpr sampler colorSampler(mip_filter::linear, mag_filter::linear, min_filter::linear);
+constexpr sampler colorSampler(mip_filter::linear, mag_filter::linear, min_filter::linear); // Linear interpolation
 constant auto yCbCrToRGB = float4x4(float4(+1.0000f, +1.0000f, +1.0000f, +0.0000f),
                                     float4(+0.0000f, -0.3441f, +1.7720f, +0.0000f),
                                     float4(+1.4020f, -0.7141f, +0.0000f, +0.0000f),

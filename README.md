@@ -16,6 +16,36 @@ Place points in the real-world using the scene's depth data to visualize the sha
 
 <img src="https://user-images.githubusercontent.com/69623522/129967643-29c5113b-a464-41a7-8231-abb5313b9438.PNG" width=250 height=500>
 
+## Data Structure
+- Header of .ply file
+```
+ply 
+comment Created by SceneX (IOS)
+format ascii 1.0
+element vertex 326798
+property float x
+property float y
+property float z
+property uchar red
+property uchar green
+property uchar blue
+property uchar alpha
+element face 0
+property list uchar int vertex_indices
+end_header
+```
+- `format ascii 1.0`: Encoded in ASCII
+- `element <element name> <number in file>`: Vertices, faces, edges, etc
+- `property <data_type> <property name 1>`: coordinates(x,y,z), color(RGBA)
+
+- Example of Data
+```
+0.13072823 -0.17935549 -0.57639885 204 190 174 255
+0.116889425 -0.18985172 -0.5403765 194 178 160 255
+0.09710844 -0.19442658 -0.49314854 205 189 174 255
+0.05077581 -0.17531422 -0.39471784 243 230 215 255
+```
+
 ## Setup Tutorial (for trial)
 1. Make sure that you are using a device with Lidar (iPhone 12 pro & pro max+)
 2. Connect your device to Xcode [Link to add physical device](https://www.russellgordon.ca/tutorials/adding-a-physical-device-as-a-run-destination/)
