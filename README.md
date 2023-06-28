@@ -16,7 +16,20 @@ Place points in the real-world using the scene's depth data to visualize the sha
 
 <img src="https://user-images.githubusercontent.com/69623522/129967643-29c5113b-a464-41a7-8231-abb5313b9438.PNG" width=250 height=500>
 
-## Only supports Iphone's w/ Lidar.
+## Setup Tutorial (for trial)
+1. Make sure that you are using a device with Lidar (iPhone 12 pro & pro max+)
+2. Connect your device to Xcode [Link to add physical device](https://www.russellgordon.ca/tutorials/adding-a-physical-device-as-a-run-destination/)
+	- If you got an error reads "This operation can fail if the version of the OS on the device is incompatible with the installed version of Xcode. You may also need to restart your mac and device in order to correctly detect compatibility." , Please check the iOS version of your device and download corresponding version from [link to device support](https://github.com/filsv/iOSDeviceSupport). Then unzip the .zip folder into path:
+'''diff
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/
+'''
+Then RESTART Xcode
+
+3. Open the Developer Mode on your device (Settings-> Privacy & Security)
+4. Trust the bundle of our project after installing (Settings -> General -> VPN & Device management -> Developer APP)
+
+
+## Only supports IPhone's w/ Lidar.
 
 
 

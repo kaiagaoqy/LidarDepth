@@ -230,7 +230,7 @@ final class Renderer {
         if self.isInViewSceneMode || !self.showParticles {
             return false
         }
-        let cameraTransform = frame.camera.transform
+        let cameraTransform = frame.camera.transform // Cam world coordinate
         return currentPointCount == 0
             || dot(cameraTransform.columns.2, lastCameraTransform.columns.2) <= cameraRotationThreshold
             || distance_squared(cameraTransform.columns.3, lastCameraTransform.columns.3) >= cameraTranslationThreshold

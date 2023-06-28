@@ -12,19 +12,22 @@ final class MainController: UIViewController, ARSessionDelegate {
     private var saveButton = UIButton(type: .system)
     private var toggleParticlesButton = UIButton(type: .system)
     private let session = ARSession() // Use ARSession to get depth data from Lidar
-    var renderer: Renderer! // real time updates to the application
+    var renderer: Renderer! // Metal Render
     private var isPasued = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //MARK: Set up device for Metal Renderer
         // Returns the device instance Metal selects as the default to run graphics
         guard let device = MTLCreateSystemDefaultDevice() else {
             print("Metal is not supported on this device")
             return
         }
-        
+        // initiate AR session
         session.delegate = self
-        // Set the view to use the default device
+        
+        //MARK: Initiate MTKView
         if let view = view as? MTKView {
             view.device = device
             view.backgroundColor = UIColor.clear
@@ -108,12 +111,12 @@ final class MainController: UIViewController, ARSessionDelegate {
         case confidenceControl:
             renderer.confidenceThreshold = confidenceControl.selectedSegmentIndex
             
-        case rgbButton:
+        case rgbButton: //Toggle RGB Camera
             renderer.rgbOn = !renderer.rgbOn
             let iconName = renderer.rgbOn ? "eye.slash": "eye"
             rgbButton.setBackgroundImage(.init(systemName: iconName), for: .normal)
             
-        case clearButton:
+        case clearButton: 
             renderer.isInViewSceneMode = true
             setShowSceneButtonStyle(isScanning: false)
             renderer.clearParticles()
