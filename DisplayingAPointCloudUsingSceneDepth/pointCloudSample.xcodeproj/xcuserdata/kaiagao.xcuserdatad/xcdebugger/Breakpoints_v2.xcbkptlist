@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4A16EF9A-C2AE-4BEA-9671-2ABD9D61DBBE"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9BA17811-86EE-46A2-BD08-84B1F4AED8EC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pointCloudSample/shaders.metal"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "pointCloudVertexShader( uint vertexID [[ vertex_id ]], texture2d&lt;float, access::read&gt; depthTexture [[ texture(0) ]], texture2d&lt;float, access::read&gt; confTexture [[ texture(1) ]], constant float4x4&amp; viewMatrix [[ buffer(0) ]], constant float3x3&amp; cameraIntrinsics [[ buffer(1) ]], constant int &amp;confFilterMode [[ buffer(2) ]], texture2d&lt;half&gt; colorYtexture [[ texture(2) ]], texture2d&lt;half&gt; colorCbCrtexture [[ texture(3) ]] )"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DC2A8B3-A76F-4987-B08D-D78AAE479CF5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "pointCloudSample/shaders.metal"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "pointCloudVertexShader( uint vertexID [[ vertex_id ]], texture2d&lt;float, access::read&gt; depthTexture [[ texture(0) ]], texture2d&lt;float, access::read&gt; confTexture [[ texture(1) ]], constant float4x4&amp; viewMatrix [[ buffer(0) ]], constant float3x3&amp; cameraIntrinsics [[ buffer(1) ]], constant int &amp;confFilterMode [[ buffer(2) ]], texture2d&lt;half&gt; colorYtexture [[ texture(2) ]], texture2d&lt;half&gt; colorCbCrtexture [[ texture(3) ]] )"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
