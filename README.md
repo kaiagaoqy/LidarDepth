@@ -4,6 +4,9 @@ This was ceated to make the wwdc20 sample into a usable utility app.
 
 Place points in the real-world using the scene's depth data to visualize the shape of the physical environment.
 
+The old version is on the outer most folder
+The current version is [SceneDepthPointCloud](https://github.com/kaiagaoqy/LidarDepth/tree/main/SceneDepthPointCloud)
+
 ## Added Functionality
  - Basic operations (toggle scanning/sampling, toggle rgb, toggle points, clear/reset point buffer)
  - Save Scans as .ply files In ASCII or BINARY formats
